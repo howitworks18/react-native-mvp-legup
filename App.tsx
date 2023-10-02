@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StripeProvider} from '@stripe/stripe-react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {STRIPE_PRIVATE_KEY} from '@env';
+import {STRIPE_PUBLISHABLE_KEY} from '@env';
 
 import MapScreen from './screens/MapScreen';
 import PhotoScreen from './screens/PhotoScreen';
@@ -93,7 +93,7 @@ function ProgressStack() {
 
 function App() {
   return (
-    <StripeProvider publishableKey={STRIPE_PRIVATE_KEY}>
+    <StripeProvider publishableKey={STRIPE_PUBLISHABLE_KEY}>
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({route}) => ({

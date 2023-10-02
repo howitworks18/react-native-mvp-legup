@@ -1,81 +1,123 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# MVP Leg Up: React Native Starter Kit
 
-# Getting Started
+Welcome to MVP Leg Up, your go-to React Native starter kit for quickly setting up a new mobile project with essential features and configurations.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- React navigation
+- MobX
+- Firebase authentication
+- React Native Maps
+- Stripe checkout
+- Photo selection
+- Test data generation
+- ... and more
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Prerequisites
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. Make sure you have Node.js, Yarn, and Cocoapods installed on your machine.
+2. Download the `google-services.plist` file and place it in the appropriate directory. (More on that below)
+
+## Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/MVP-Leg-Up.git
+   ```
+
+2. **Install Dependencies**: Navigate into the project directory and run:
+
+   ```bash
+   yarn install
+   ```
+
+3. **Install iOS Pods**: Change into the iOS directory and install the Cocoapods:
+
+   ```bash
+   cd ios && pod install
+   ```
+
+4. **Add Google Services Config**: Place your `google-services.plist` file in the `ios/YourApp/` directory. Failure to do so will result in build errors.
+
+## Generate Test Data
+
+Run the following command to populate the database with 100 test users:
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+node populateDatabase.js
 ```
 
-## Step 2: Start your Application
+Each document in the TestData collection will have the following schema with randomly generated data:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```
+{
+  "_id": "auto_generated_id",
+  "date": "2023-12-30",
+  "email": "jane.rodriguez66@example.com",
+  "first_name": "Jane",
+  "last_name": "Rodriguez",
+  "location": {
+    "latitude": 29.993017326035865,
+    "longitude": -98.0619033564829
+  },
+  "profile_picture": "http://placekitten.com/200/200?image=66",
+  "username": "user66"
+}
 ```
 
-### For iOS
+## How to Get google-services.plist
 
-```bash
-# using npm
-npm run ios
+- Go to your Firebase project in the Firebase console.
+- Navigate to Project settings.
+- Under the "Your apps" card, select the iOS app.
+- Download the google-services.plist file.
+- Place this file in the `ios/YourApp/` directory of your project.
 
-# OR using Yarn
-yarn ios
-```
+## Stripe Integration
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+This starter kit is configured to use Stripe for payment processing. You'll need to add your Stripe API keys for it to work properly.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Getting the Keys
 
-## Step 3: Modifying your App
+1. Head over to your Stripe Dashboard.
+2. Navigate to the API keys section.
+3. You'll see two keys: `Publishable key` and `Secret key`.
 
-Now that you have successfully run the app, let's modify it.
+### Setting up the Keys
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+1. **Project Root .env**: Place your `STRIPE_PUBLISHABLE_KEY` in the `.env` file located in the project's root directory.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+   ```bash
+   STRIPE_PUBLISHABLE_KEY=your_publishable_key_here
+   ```
 
-## Congratulations! :tada:
+2. **StripeServer .env**: Place your `STRIPE_SECRET_KEY` in the `.env` file within the `StripeServer` directory.
 
-You've successfully run and modified your React Native App. :partying_face:
+   ```bash
+   STRIPE_SECRET_KEY=your_secret_key_here
+   ```
 
-### Now what?
+### StripeServer Setup
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+The `StripeServer` directory has its own dependencies, so you'll need to install those:
 
-# Troubleshooting
+1.  Navigate to the `StripeServer` directory.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+    ```bash
+    cd StripeServer
+    ```
 
-# Learn More
+2.  Run `yarn` to install the required packages.
 
-To learn more about React Native, take a look at the following resources:
+    ```bash
+    yarn install
+    ```
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# react-native-react-navigation-mobx
-# react-native-mvp-legup
+3.  Start the Stripe server by running:
+
+        ```bash
+        yarn start
+        ```
+
+    Note: the Stripe server is hard coded for port 3000, you may need to change the port in your code if this is not the case in your set up.
