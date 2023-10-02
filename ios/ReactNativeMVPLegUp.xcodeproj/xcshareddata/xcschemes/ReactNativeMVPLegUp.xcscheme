@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ReactNativeReactNavigationMobx.app"
-               BlueprintName = "ReactNativeReactNavigationMobx"
-               ReferencedContainer = "container:ReactNativeReactNavigationMobx.xcodeproj">
+               BuildableName = "ReactNativeMVPLegUp.app"
+               BlueprintName = "ReactNativeMVPLegUp"
+               ReferencedContainer = "container:ReactNativeMVPLegUp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeReactNavigationMobxTests.xctest"
-               BlueprintName = "ReactNativeReactNavigationMobxTests"
-               ReferencedContainer = "container:ReactNativeReactNavigationMobx.xcodeproj">
+               BuildableName = "ReactNativeMVPLegUpTests.xctest"
+               BlueprintName = "ReactNativeMVPLegUpTests"
+               ReferencedContainer = "container:ReactNativeMVPLegUp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeReactNavigationMobx.app"
-            BlueprintName = "ReactNativeReactNavigationMobx"
-            ReferencedContainer = "container:ReactNativeReactNavigationMobx.xcodeproj">
+            BuildableName = "ReactNativeMVPLegUp.app"
+            BlueprintName = "ReactNativeMVPLegUp"
+            ReferencedContainer = "container:ReactNativeMVPLegUp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeReactNavigationMobx.app"
-            BlueprintName = "ReactNativeReactNavigationMobx"
-            ReferencedContainer = "container:ReactNativeReactNavigationMobx.xcodeproj">
+            BuildableName = "ReactNativeMVPLegUp.app"
+            BlueprintName = "ReactNativeMVPLegUp"
+            ReferencedContainer = "container:ReactNativeMVPLegUp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
