@@ -1,4 +1,4 @@
-# MVP Leg Up: React Native Starter Kit
+# MVP Leg Up 🦵: React Native Starter Kit
 
 Welcome to MVP Leg Up, your go-to React Native starter kit for quickly setting up a new mobile project with essential features and configurations.
 
